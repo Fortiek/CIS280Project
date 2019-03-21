@@ -23,3 +23,7 @@ p.intro{
 	color:yellow;
 	text-align:center;
 }
+table{
+	border: 1px solid #f000;
+	width:100%;
+}
