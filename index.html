@@ -11,18 +11,19 @@
 <!-- Add role attributes for ARIA accessability -->
 <body>
 	<header class = "banner" role = "banner">
-		<nav>
+		<nav role="navigation">
 			<ul>
 				<li><a href = "index.html">Home</a></li>
 				<li><a href = "fighter.html">Fighter</a></li>
 				<li><a href = "cleric.html">Cleric</a></li>
 				<li><a href = "mage.html">Mage</a></li>
+				<li><a href = "wizard.html">Wizard</a></li>
 				<li><a href = "rogue.html">Rogue</a></li>
 			</ul>
 		</nav>
 	</header>
 	<!-- Class names for CSS, link in head -->
-	<h1><b>Pathfinder Character Builder</b></h1>
+	<h1 class="title"><b>Pathfinder Character Builder</b></h1>
 	<p class = "intro">
 		Hello, and welcome to the Pathfinder v1.0 character builder for beginners! With this tool you'll be able to get an 
 		idea how a character is built from the ground up! In the banner, you'll find links to different character classes
@@ -38,48 +39,199 @@
 			    <th>Ability Modifier</th>
 			  </tr>
   			<tr>
+
+			    <td>"Data Entry"</td>
+
 			    <td>
-					<input list="race">
-						<datalist id="race">
-							<option value="Dwarves">
-							<option value="Elves">
-							<option value="Gnomes">
-							<option value="Half-Elves">
-							<option value="Half-Orcs">
-							<option value="Halflings">
-							<option value="Humans">
-						</datalist>
+					<label for="race">Race Selection:</label>
+						<select id="race" name="race">
+							<option value="dwarf">Dwarf</option>
+							<option value="elf">Elf</option>
+							<option value="gnome">Gnome</option>
+							<option value="halfelf">Half-Elf</option>
+							<option value="halforc">Half-Orc</option>
+							<option value="halfling">Halfling</option>
+							<option value="human">Human</option>
+						</select>
+						<button onclick="raceSelection()">Select</button>
 				</td>
 			    <td>Strength</td>
 			    <td>"Data"</td>
 			</tr>
 			<tr>
-				<td></td>
+				<td>#</td>
+
+				<td class="hiddenCell"></td>
+
 				<td>Dexterity</td>
 				<td>"Data"</td>
 			</tr>
 			<tr>
-				<td></td>
+
+				<td>#</td>
+
+				<td class="hiddenCell"></td>
+
 				<td>Constitution</td>
 				<td>"Data"</td>
 			</tr>
 			<tr>
-				<td></td>
+
+				<td>#</td>
+
+				<td class="hiddenCell"></td>
+
 				<td>Intelligence</td>
 				<td>"Data"</td>
 			</tr>
 			<tr>
-				<td></td>
+
+				<td>#</td>
+
+				<td class="hiddenCell"></td>
+
 				<td>Wisdom</td>
 				<td>"Data"</td>
 			</tr>
 			<tr>
-				<td></td>
+
+				<td>#</td>
+				<td class="hiddenCell"></td>
 				<td>Charisma</td>
 				<td>"Data"</td>
 			</tr>
 			</table>
 
+	<div class="hidden">
+		<p id="dwarf_info">
+			Dwarves are a short and stocky race, and stand about a foot 
+			shorter than most humans, with wide, compact bodies that
+			account for their burly appearance. Male and female dwarves 
+			pride themselves on the long length of their hair, and men 
+			often decorate their beards with a variety of clasps and 
+			intricate braids. Clean-shavenness on a male dwarf is a sure
+			sign of madness, or worse—no one familiar with their race
+			trusts a beardless dwarven man.
+		</p>
+		<p id="elf_info">
+			Generally taller than humans, elves possess a graceful, 
+			slender physique that is accentuated by their long, pointed 
+			ears. It is a mistake, however, to consider them weak or
+			feeble, as the thin limbs of an elf can contain surprising
+			power. Their eyes are wide and almond-shaped, and filled with
+			large, vibrantly colored pupils. The coloration of elves as
+			a whole varies wildly, and is much more diverse than that of 
+			human populations. However, as their coloration often 
+			matches their surroundings, the elves of a single community
+			may appear quite similar. Forest-dwelling elves often have 
+			variations of green, brown, and tan in their hair, eye, and 
+			even skin tones.
+			While elven clothing often plays off the beauty of the 
+			natural world, those elves who live in cities tend to bedec
+			themselves in the latest fashions. Where city-dwelling elves 
+			encounter other urbanites, the elves are often fashion 
+			trendsetters.
+		</p>
+		<p id="gnome_info">
+			Gnomes are one of the smallest of the common races, 
+			generally standing just over 3 feet in height. Despite 
+			their small frames, however, gnomes are extremely resilient, 
+			and not as weak as many of their foes assume. Though their 
+			diminutive stature reduces their ability to move quickly, 
+			gnomes often train to take advantage of their size,
+			especially when fighting foes much larger than themselves.
+			The coloration of gnomes varies so wildly that many 
+			outsiders assume gnomes commonly use dyes and illusions to 
+			change their skin and hair tones. While gnomes are certainly
+			not above cosmetic enhancement (and may wish to change their
+			appearance just to see how outlandish they can look), 
+			their natural hues truly range over a rainbow of coloration.
+			Their hair tends toward vibrant colors such as the fiery 
+			orange of autumn leaves, the verdant green of forests at
+			springtime, or the deep reds and purples of wildflowers in 
+			bloom. Similarly, their flesh tones range from earthy 
+			browns to floral pinks, and gnomes with black, pastel blue, 
+			or even green skin are not unknown. Gnomes’ coloration has
+			little regard for heredity, with the color of a gnome’s
+			parents and other kin having no apparent bearing on the
+			gnome’s appearance. Gnomes possess highly mutable facial
+			characteristics, and their proportions often don’t match 
+			the norm of other humanoid races. Many have overly large 
+			mouths and eyes, an effect which can be both disturbing and 
+			stunning, depending on the individual. Others may have 
+			extremely small features spread over an otherwise blank 
+			expanse of face, or may mix shockingly large eyes with a 
+			tiny, pursed mouth and a pert button of a nose. Gnomes
+			rarely take pride in or show embarrassment about their
+			features, but members of other races often fixate on a 
+			gnome’s most prominent feature and attempt to use it as the 
+			focus of insults or endearments.
+		</p>
+		<p id="halfelf_info">
+			 Half-elves stand taller than humans but shorter than elves. 
+			 They inherit the lean build and comely features of their
+			 elven lineage, but their skin color is normally dictated by 
+			 their human side. While half-elves retain the pointed ears
+			 of elves, theirs are more rounded and less pronounced. 
+			 Their eyes tend to be human-like in shape, but feature an
+			 exotic range of colors from amber or violet to emerald 
+			 green and deep blue. This pattern changes for half-elves of 
+			 drow descent, however. Such elves are almost unfailingly 
+			 marked with the white or silver hair of the drow parent, 
+			 and more often than not have dusky gray skin that takes on 
+			 a purplish or bluish tinge in the right light, while their 
+			 eye color usually favors that of the human parent.
+		</p>
+		<p id="halforc_info">
+			Half-orcs average around 6 feet tall, with powerful builds 
+			and greenish or grayish skin. Their canine teeth often grow 
+			long enough to protrude from their mouths, and these 
+			“tusks,” combined with heavy brows and slightly pointed 
+			ears, give them their notoriously bestial appearance. While 
+			half-orcs may be impressive, few ever describe them as 
+			beautiful. Despite these obvious orc traits, half-orcs are
+			as varied as their human parents.
+		</p>
+		<p id="halfling_info">
+			 Halflings rise to a humble height of 3 feet. They prefer to 
+			 walk barefoot, leading the bottoms of their feet to become 
+			 roughly calloused. Tufts of thick, curly hair warm the tops 
+			 of their broad, tanned feet.Their skin tends toward a rich 
+			 cinnamon color and their hair toward light shades of brown. 
+			 A halfling’s ears are pointed, but proportionately not much
+			 larger than those of a human.Halflings prefer simple and
+			 modest clothing. Though willing and able to dress up if the 
+			 situation demands it, their racial urge to remain quietly 
+			 in the background makes them rather conservative dressers 
+			 in most situations. Halfling entertainers, on the other 
+			 hand, make their livings by drawing attention, and tend to 
+			 go overboard with gaudy and flashy costumes.
+		</p>
+		<p id="human_info">
+			The physical characteristics of humans are as varied as the 
+			world’s climes. From the dark-skinned tribesmen of the 
+			southern continents to the pale and barbaric raiders of the 
+			northern lands, humans possess a wide variety of skin 
+			colors, body types, and facial features. Generally speaking, 
+			humans’ skin color assumes a darker hue the closer to the 
+			equator they live. At the same time, bone structure, hair 
+			color and texture, eye color, and a host of facial and 
+			bodily phenotypic characteristics vary immensely from one 
+			locale to another. Cheekbones may be high or broad, noses 
+			aquiline or flat, and lips full or thin; eyes range wildly 
+			in hue, some deep set in their sockets, and others with full 
+			epicanthic folds. Appearance is hardly random, of course, 
+			and familial, tribal, or national commonalities often allow 
+			the knowledgeable to identify a human’s place of origin on
+			sight, or at least to hazard a good guess. Humans’ origins 
+			are also indicated through their traditional styles of 
+			bodily decoration, not only in the clothing or jewelry worn,
+			but also in elaborate hairstyles, piercing, tattooing, and
+			even scarification.
+		</p>
+	</div>
+
 <!-- End of Document -->
+<script src="index.js"></script>
 </body>
 </html>
