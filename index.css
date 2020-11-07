@@ -40,6 +40,9 @@ p.intro{
 	color:yellow;
 	text-align:center;
 }
+p{
+	color:yellow;
+}
 
 table{
 	border: 1px solid #f000;
