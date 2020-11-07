@@ -40,6 +40,12 @@ p.intro{
 	color:yellow;
 	text-align:center;
 }
+
+table{
+	border: 1px solid #f000;
+	width:100%;
+}
+
 p#dwarf_info, #elf_info, #gnome_info, #halfelf_info, #halforc_info, #halfling_info, #human_info{
 	display:none;
 }
@@ -56,3 +62,4 @@ table, td, th{
 table td.hiddenCell{
 	visibility:hidden;
 }
+
