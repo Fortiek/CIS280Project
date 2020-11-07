@@ -1,8 +1,3 @@
-/*Start with some global variables to use for key parts of math in character
-creation process, like attributes.
-*/
-
-
 
 /*
 Attempt to get race selection from user, display race_info <p> for
@@ -13,6 +8,7 @@ Ref for selection handling:
 https://stackoverflow.com/questions/1085801/get-selected-value-in-dropdown-list-using-javascript
 
 */
+
 var str = 10;
 var dex = 10;
 var con = 10;
@@ -220,6 +216,16 @@ function lvlTblHide(){
 	document.getElementById("hiddenTbl").style.display = "none";
 };
 
+=======
+var race = ["dwarf", "elf", "gnome", "halfelf", "halforc", "halfling", "human"];
+
+function raceSelection(){
+	var e = document.getElementById("race");
+	var raceSel = e.options[e.selectedIndex].value;
+	console.log(raceSel);	
+	
+	
+};
 
 
 
